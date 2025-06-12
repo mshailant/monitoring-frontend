@@ -12,7 +12,6 @@ import {
 import {
   Avatar,
   AvatarFallback,
-  AvatarImage,
 } from "@/components/ui/avatar"
 import {
   DropdownMenu,
@@ -29,7 +28,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import {useAuth} from "@/hooks/useAuth";
+import {useAuth} from "@/hooks/use-auth";
 
 export function NavUser() {
   const { isMobile } = useSidebar()

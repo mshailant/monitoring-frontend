@@ -2,7 +2,7 @@
 
 import { useDomains } from "@/hooks/use-domains"
 import { columns } from "./columns"
-import { DataTable } from "@/components/domains/data-table"
+import { DomainDataTable } from "@/components/tables/domain-data-table"
 import { Input } from "@/components/ui/input"
 import {useEffect, useState} from "react"
 import { Table as ReactTable } from "@tanstack/react-table"
@@ -41,7 +41,7 @@ export default function DomainsPage() {
             {error && <p className="text-red-600">Error: {error.message}</p>}
 
             {!loading && !error && (
-                <DataTable columns={columns} data={domains} onTableInit={setTable} />
+                <DomainDataTable columns={columns} data={domains} onTableInit={setTable} />
             )}
         </div>
     )

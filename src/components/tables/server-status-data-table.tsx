@@ -17,6 +17,7 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { useEffect, useState } from "react"
+import { MonitoringStatus } from "@/types/monitoring-status"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -24,11 +25,11 @@ interface DataTableProps<TData, TValue> {
     onTableInit?: (table: TableTanstack<TData>) => void
 }
 
-export function DataTable<TData, TValue>({
-                                             columns,
-                                             data,
-                                             onTableInit,
-                                         }: DataTableProps<TData, TValue>) {
+export function MonitoringStatusDataTable<TData extends MonitoringStatus, TValue>({
+                                                                                      columns,
+                                                                                      data,
+                                                                                      onTableInit,
+                                                                                  }: DataTableProps<TData, TValue>) {
     const [globalFilter, setGlobalFilter] = useState("")
 
     const table = useReactTable({
@@ -41,11 +42,10 @@ export function DataTable<TData, TValue>({
                 .normalize("NFD")
                 .replace(/[\u0300-\u036f]/g, "")
 
-
             const values = [
-                row.original.domain,
-                row.original.complex?.name,
-                row.original.complex?.company?.name,
+                row.original.complexName,
+                row.original.companyName,
+                row.original.country,
             ]
 
             return values.some((val) =>
