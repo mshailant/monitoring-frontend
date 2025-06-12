@@ -1,4 +1,13 @@
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
 
-export default function Home() {
-  return <h1 className="text-3xl font-bold underline">Hello, Next.js!</h1>;
+export default async function Home() {
+    const cookieStore = await cookies()
+    const token = cookieStore.get('token')?.value
+
+    if (token) {
+        redirect('/dashboard')
+    } else {
+        redirect('/auth/login')
+    }
 }
