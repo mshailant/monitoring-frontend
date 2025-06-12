@@ -9,23 +9,6 @@ import {
 } from "lucide-react"
 
 export const navigationData = {
-    teams: [
-        {
-            name: "Acme Inc",
-            logo: GalleryVerticalEnd,
-            plan: "Enterprise",
-        },
-        {
-            name: "Acme Corp.",
-            logo: AudioWaveform,
-            plan: "Startup",
-        },
-        {
-            name: "Evil Corp.",
-            logo: Command,
-            plan: "Free",
-        },
-    ],
     navMain: [
         {
             title: "Dashboard",
@@ -35,7 +18,7 @@ export const navigationData = {
             chevron: true,
         },
         {
-            title: "Monitoring",
+            title: "Monitor",
             url: "",
             icon: Monitor,
             items: [

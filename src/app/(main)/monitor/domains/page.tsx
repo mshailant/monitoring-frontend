@@ -29,7 +29,7 @@ export default function DomainsPage() {
             {table && (
                 <div className="mb-4 flex items-center gap-4">
                     <Input
-                        placeholder="Search for a domain, resort, or business..."
+                        placeholder="Search for a domain, complex, or company..."
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                         className="w-96"
