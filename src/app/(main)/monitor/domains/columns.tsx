@@ -5,14 +5,14 @@ import {ExternalLink} from "lucide-react";
 
 export const columns: ColumnDef<DomainCheck>[] = [
     {
-        accessorKey: "complex.name",
-        header: "Complex",
-        cell: ({ row }) => row.original.complex?.name || "-",
-    },
-    {
         accessorKey: "complex.company.name",
         header: "Company",
         cell: ({ row }) => row.original.complex?.company?.name || "-",
+    },
+    {
+        accessorKey: "complex.name",
+        header: "Complex",
+        cell: ({ row }) => row.original.complex?.name || "-",
     },
     {
         accessorKey: "domain",
