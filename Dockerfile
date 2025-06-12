@@ -1,6 +1,14 @@
 # Etapa única para desarrollo
 FROM node:20-alpine
 
+# Establecer zona horaria como variable de entorno
+ENV TZ=America/Argentina/Buenos_Aires
+
+# Instalar tzdata y dependencias
+RUN apk add --no-cache tzdata \
+  && cp /usr/share/zoneinfo/$TZ /etc/localtime \
+  && echo $TZ > /etc/timezone
+
 # Crear directorio de trabajo
 WORKDIR /app
 
